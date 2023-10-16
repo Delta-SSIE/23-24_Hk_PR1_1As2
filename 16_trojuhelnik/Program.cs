@@ -16,7 +16,8 @@
             double strC = double.Parse(stranaC);
             bool trojuhelnik = true;
 
-            if (strA + strB > strC == strA + strC > strB && strA + strB > strC == strB + strC > strA && strA + strC > strB == strB + strC > strA)
+            if (!(strA+strB<strC || strA+strC<strB || strB+strC<strA))  //(strA + strB > strC == strA + strC > strB && strA + strB > strC == strB + strC > strA && strA + strC > strB == strB + strC > strA)
+
             {
                 Console.WriteLine("Zadaný Trojuhelník je správný");
 
@@ -52,9 +53,9 @@
 
             if (trojuhelnik)
                 {
-                double obvod = strA + strA + strA;
-                double s =(strA + strA + strA) / 2;
-                double obsah = Math.Sqrt(s * (s - strA) * (s - strA) * (s - strA));
+                double obvod = strA + strB + strC;
+                double s =(strA + strB + strC) / 2;
+                double obsah = Math.Sqrt(s * (s - strA) * (s - strB) * (s - strC));
                 Console.WriteLine($"Troúhelník o stanách {stranaA}, {stranaB}, {stranaC} má obvod {obvod:N3}  v cm a obsah {obsah:N3} v cm2") ;
                 }
 
