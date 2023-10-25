@@ -1,0 +1,10 @@
+1)	Sestavme a naprogramujte algoritmus, který vypočítá a standardním způsobem vypíše čtvrtý člen posloupnosti určené následovně. První dva členy jsou zadány uživatelem, a to tak, že první člen je menší než druhý, a další členy se získají vynásobením předchozích dvou členů, tj. an = an-2 · an-1,
+n = 3,4,… .
+Např.: 2, 5, 10, 50, 500, 25000, ...
+  a.	Vytvořte algoritmus tak, aby vypočítal pátý člen posloupnosti zadané v předchozím příkladu.
+  b.	Upravme uvedené algoritmy ještě tak, aby vypočítaly a standardním způsobem vypsaly prvních deset členů zadané posloupnosti.
+
+2)	Sestavte algoritmus, který určí a standardním způsobem vypíše
+součet čísel načtených do proměnných x, y a z, ale jen těch, která jsou větší než 5. Pokud se v uvedených proměnných číslo větší než 5 nevyskytne, algoritmus vypíše text "Nenalezeno žádné číslo větší než 5."
+  a.	Upravte předchozí algoritmus tak, aby čísla byla náhodně generována v intervalu <-10;10>
+  b.	Upravte algoritmus tak, aby ze všech vygenerovaných hodnot vypočítal aritmetický průměr
