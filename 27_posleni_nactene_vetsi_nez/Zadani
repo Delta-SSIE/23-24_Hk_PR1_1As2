@@ -1,0 +1,2 @@
+Sestavte algoritmus, který postupně do jednoduché proměnné číslo načte p čísel, p ≥ 1, a určí hodnotu naposledy načteného čísla většího než 15. Výsledek standardním způsobem vypíše. 
+Pokud se mezi načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
