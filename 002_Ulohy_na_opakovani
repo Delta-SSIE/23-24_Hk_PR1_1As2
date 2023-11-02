@@ -1,0 +1,22 @@
+1) Sestavte algoritmus, který postupně do jednoduché proměnné číslo načte p čísel, p ≥ 1, a určí hodnotu prvního načteného čísla většího než 15. Výsledek standardním způsobem vypíše. 
+Pokud se mezi načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
+  a) Upravte program, tak aby hodnoty náhodně generoval v intervalu <0,30>
+
+2) Sestavme algoritmus, který určí součet čísel větších než 10 a menších než 50 vyskytujících se v konečném počtu zadávaných čísel postupně ukládaných do jednoduché proměnné číslo. 
+Pokud se mezi načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
+ a) Upravte program, tak aby hodnoty náhodně generoval v intervalu <0,100>
+ b) Upravte program tak, aby uživatel zadal interval hodnot pro součet
+
+3) Sestavte algoritmus, který určí maximální hodnotu z konečného počtu čísel postupně ukládaných do jednoduché proměnné číslo, ale jen z těch čísel, která jsou dělitelná pěti. 
+Výsledek standardním způsobem vypíše. Pokud se mezi načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
+ a) Upravte program, tak aby hodnoty náhodně generoval v intervalu <0,100>
+
+4) Sestavte algoritmus, který určí hodnotu prvního čísla dělitelného pěti, které se vyskytne v konečném počtu čísel postupně ukládaných do jednoduché proměnné číslo. Výsledek standardním způsobem
+vypíše. Pokud se mezi načtenými čísly žádné číslo dělitelní pěti nevyskytne, podá o tom informaci.
+ a) Upravte program, tak aby hodnoty náhodně generoval v intervalu <0,100>
+
+5) Sestavte algoritmus, který určí počet dvojciferných čísel, která se vyskytnou v konečném počtu čísel postupně ukládaných a náhodně generovaných v intevalu <0, 1000> do jednoduché proměnné číslo. 
+Výsledek standardním způsobem vypíše. Pokud se mezi načtenými čísly žádné dvojciferné číslo nevyskytne, podá o tom informaci.
+
+6) Sestavte algoritmus, který postupně načte p čísel, do jednoduché proměnné číslo náhodně vyganeruje čísla v intervalu <-5,5>, p ≥ 1  a určí minimální hodnotu a počet jejich výskytů. 
+Využijte výhradně while cyklus. Výsledek standardním způsobem vypíše.
