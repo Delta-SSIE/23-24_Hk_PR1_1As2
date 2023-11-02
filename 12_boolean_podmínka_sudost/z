@@ -1,1 +1,43 @@
+﻿namespace _12_boolean_podmínka_sudost
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Zajed číslo:");
+            int cislo = int.Parse(Console.ReadLine());
 
+            /* Jednoduché základní řešení
+            // zbytek po celočíseném dělení
+
+            if (cislo % 2 == 0) //výpočet zbytku eločíselného dělení
+            {
+                Console.WriteLine($"Zadané číslo {cislo} je sudé");
+            }
+            else
+            {
+                Console.WriteLine($"Zadané číslo {cislo} je liché");
+            }
+            */
+            /*
+            bool sudost; // prom2nn8 tzpu bool yn8 jen true:false
+
+            sudost = (cislo % 2 == 0);
+
+            if (sudost)
+            {
+                Console.WriteLine($"Zadané číslo {cislo} je sudé");
+            }
+            else
+            {
+                Console.WriteLine($"Zadané číslo {cislo} je liché");
+            }*/
+            //Ternární operátor v C# tedy nahrazuje if
+            string deliteslnost5 = (cislo % 5 == 0) ? "Delitelné 5" : "NEdelitelné 5";
+            Console.WriteLine(deliteslnost5);
+            // ukázka negace výrazu
+            string nedeliteslnost5 = !(cislo % 5 == 0) ? "NEdelitelné 5" : "Delitelné 5";
+            Console.WriteLine(nedeliteslnost5);
+        }
+    }
+}
