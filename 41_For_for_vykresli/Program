@@ -1,0 +1,26 @@
+namespace _37_For_cyklus_hvezdicky
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Zadejte počet řádků: ");
+            int pocetRadku = Convert.ToInt32(Console.ReadLine());
+
+            // Vytvoření vzoru
+            for (int i = 1; i <= pocetRadku; i++)
+            {
+                if (i%2==0)
+                    Console.ForegroundColor = ConsoleColor.Red;
+                else
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                for (int j = 0; j < i; j++)
+                {
+                    Console.Write("*");
+                }
+                Console.WriteLine(); // Nový řádek po každém vzoru
+            }
+        }
+    }
+}
