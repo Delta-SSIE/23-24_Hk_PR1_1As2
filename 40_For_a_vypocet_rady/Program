@@ -1,0 +1,23 @@
+namespace _41_For_rada
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Parametry aritmetické řady
+            int n = 5;       // počet členů řady
+            int a1 = 2;      // první člen
+            int d = 3;       // diference mezi členy
+            // Výpis prvních n členů aritmetické řady
+            Console.WriteLine($"Prvních {n} členů aritmetické řady s a1 = {a1} a d = {d}:");
+
+            for (int i = 1; i <= n; i++)
+            {
+                int clen = a1 + i * d;
+                Console.Write( i +". člen "+clen + " \n");
+            }
+
+            Console.WriteLine();  // Nový řádek pro oddělení výstupu
+        }
+    }
+}
