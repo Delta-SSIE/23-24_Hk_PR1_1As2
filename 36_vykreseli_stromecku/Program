@@ -1,0 +1,65 @@
+namespace _30_stomečcek
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            /* int vyska = 5; // Výška trojúhelníka (změňte podle potřeby)
+             int i = 1;
+
+             while (i <= vyska)
+             {
+                 int mezery = vyska - i;
+                 int znaky = 2 * i - 1;
+
+                 // Vytvoření mezery pro zarovnání
+                 int j = 1;
+                 while (j <= mezery)
+                 {
+                     Console.Write(" ");
+                     j++;
+                 }
+
+                 // Vykreslení znaků #
+                 j = 1;
+                 while (j <= znaky)
+                 {
+                     Console.Write("#");
+                     j++;
+                 }
+
+                 Console.WriteLine(); // Přechod na nový řádek
+                 i++;
+                 */
+            int vyska = 10; // Výška stromu (změňte podle potřeby)
+            Console.ForegroundColor = ConsoleColor.Green;
+            for (int i = 1; i <= vyska; i++)
+            {
+                // Vytvoření mezery pro zarovnání
+                for (int j = 1; j <= vyska - i; j++)
+                {
+                    Console.Write(" ");
+                }
+
+                // Vykreslení hvězdiček
+                for (int j = 1; j <= 2 * i - 1; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine(); // Přechod na nový řádek
+            }
+
+            // Vykreslení kmene stromu
+            for (int i = 1; i <= vyska / 3; i++)
+            {
+                for (int j = 1; j <= vyska - 1; j++)
+                {
+                    Console.Write(" ");
+                }
+                Console.WriteLine("*");
+            }
+        }
+        
+    }
+}
