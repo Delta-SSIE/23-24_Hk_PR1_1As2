@@ -1,0 +1,45 @@
+namespace _37_for01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            double soucet = 0;
+
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"Zadej {i}. hodnotu:");
+                double hodnota = Convert.ToDouble(Console.ReadLine());
+                soucet += hodnota;
+            }
+
+            /*
+            int pocet = 0;
+
+            while (pocet < 10)
+            {
+                pocet++;
+                Console.Write($"Zadejte {pocet}. hodnotu: ");
+                double hodnota = Convert.ToDouble(Console.ReadLine());
+                soucet+= hodnota;
+                
+            }
+            */
+
+            /*
+             * Convert třída:
+             *Convert je třída, která poskytuje statické metody pro konverzi mezi různými datovými typy.
+             *Convert může být použit pro různé převody, včetně převodu mezi základními datovými typy, jako jsou čísla a řetězce.
+             * 
+             * Parse metoda:
+             * Parse je metoda definovaná v některých datových typech (například int, double, DateTime atd.).
+             * Parse se používá pro převod řetězcové reprezentace hodnoty na odpovídající datový typ.
+             */
+
+
+            Console.WriteLine($"Součet všech zadaných hodnot je: {soucet}");
+        }
+
+    }
+}
