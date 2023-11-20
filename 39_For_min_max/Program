@@ -1,0 +1,44 @@
+using System;
+
+namespace _39_For003
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Zadej počet hodnot, v kterých chceš nalézt minimum a maximum");
+            Random generator = new Random();
+            int pocet = int.Parse(Console.ReadLine());
+            int cislo;
+            int min = int.MaxValue;
+            int pocet_min = 0;
+            int max = int.MinValue;
+            int pocet_max = 0;
+
+            for (int i = 0; i < pocet; i++)
+            {
+                cislo = generator.Next(-20, 21);
+                Console.WriteLine($"{i + 1}: {cislo}");
+                if (cislo < min)
+                {
+                    min = cislo;
+                    pocet_min = 1;
+                }
+                if (cislo > max)
+                {
+                    max = cislo;
+                    pocet_max = 1;
+                }
+                if (cislo == min)
+                    pocet_min++;
+                if (cislo == max)
+                    pocet_max++;
+            }
+            if (pocet > 1)
+            {
+                Console.WriteLine($"\nMinimální zadaná hodnota je {min} a byla vygenerována {pocet_min-1}x.\n Maximální zadaná hodnota je {max} a byla vygenerována  {pocet_max-1}x.");
+            }
+
+        }
+    }
+}
