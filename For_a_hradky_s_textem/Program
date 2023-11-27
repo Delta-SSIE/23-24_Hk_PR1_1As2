@@ -1,0 +1,80 @@
+namespace _41_Text_a_for_cyklus
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string text = "Programujeme v C#";
+            Console.WriteLine(text);
+            /*určí počet znaků v textu
+             * Console.WriteLine(text);
+            Console.ReadKey();
+            Console.WriteLine("Věta: Programujeme v  C# má " + text.Length + " počet znaků");*/
+            /* Vypíše text po znaku
+            for (int i=0; i<text.Length; i++)
+                Console.WriteLine(text[i]);*/
+            /* Sudá písmena budou červená
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+
+                Console.Write(text[i]);
+
+                // Resetujte barvu zpět na výchozí
+                Console.ForegroundColor = ConsoleColor.Gray;
+            }*/
+            // Délka textu bez mezer
+            int characterCount = 0;
+            for (int i =0; i< text.Length;i++)
+            {
+                if (text[i] != ' ')
+                {
+                    characterCount ++;
+                }
+            }
+            Console.WriteLine("Řešení 1: Počet znaků bez mezer je:" + characterCount);
+            Console.ReadKey();
+
+            int characterCount2=0;
+            for (int i = 0; i < text.Length; i++)
+           {
+               if (!Char.IsWhiteSpace(text[i]))
+               {
+                   characterCount2++;
+               }
+           }
+            Console.WriteLine("Řešení 2: Počet znaků bez mezer je:" + characterCount2);
+            Console.ReadKey();
+
+            // Všechna velká
+            string input = "Programujeme v C#";
+            char[] result = new char[input.Length];
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                result[i] = Char.ToUpper(input[i]);
+            }
+
+            string output = new string(result);
+            Console.WriteLine(output);
+            Console.ReadKey();
+
+            // Určí počet samohlásek v textu
+            int vowelCount = 0;
+
+            for (int i = 0; i < text.Length; i++)
+            {
+                char currentChar = Char.ToLower(text[i]);
+                if (currentChar == 'a' || currentChar == 'e' || currentChar == 'i' || currentChar == 'o' || currentChar == 'u')
+                {
+                    vowelCount++;
+                }
+            }
+
+            Console.WriteLine($"Počet samohlásek: {vowelCount}");
+        }
+    }
+}
