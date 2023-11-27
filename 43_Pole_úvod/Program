@@ -1,0 +1,27 @@
+namespace _43_pole01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Delkarace proměnné pole
+            int[] moje_pole = new int[10];
+            Random random = new Random();
+
+            // Načteme prvky do pole
+            for (int i = 0; i < moje_pole.Length; i++)
+            {
+               
+                moje_pole[i] = random.Next(-10, 11); ;
+            }
+            // Vypíšeme prvky v poli v jednom řádku
+            for (int i = 0; i < moje_pole.Length; i++)
+                Console.Write(moje_pole[i] + "; ");
+            Console.WriteLine("\n");
+            //Vypíšeme prvky pole pod sebe
+            for (int i = 0; i < moje_pole.Length; i++)
+                Console.WriteLine((i+1) +". "+moje_pole[i]);
+
+        }
+    }
+}
