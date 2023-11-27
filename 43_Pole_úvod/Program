@@ -22,6 +22,11 @@ namespace _43_pole01
             for (int i = 0; i < moje_pole.Length; i++)
                 Console.WriteLine((i+1) +". "+moje_pole[i]);
 
+            //Vypíšeme prvky pole pod sebe v obráceném pořadí
+            Console.WriteLine("\n");
+            for (int i = moje_pole.Length-1; i >= 0; i--)
+                Console.WriteLine((i+1) + ". " + moje_pole[i]);
+
         }
     }
 }
