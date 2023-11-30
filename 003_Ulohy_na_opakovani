@@ -1,0 +1,17 @@
+1) Sestavme algoritmus a naprogramujte, který postupně do jednoduché proměnné číslo načte p čísel, p ≥ 1, a určí jejich aritmetický průměr.
+    a)	Použijte cyklus while
+    b)	Použijte cyklus for
+2) Sestavme algoritmus a naprogramujte, který postupně do jednoduché proměnné číslo načte p čísel, p ≥ 1, a určí součet sudých čísel větších než 10. Pokud se mezi p načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
+    a)	Použijte cyklus while
+    b)	Použijte cyklus for
+3) Sestavme algoritmus a naprogramujte, který postupně do jednoduché proměnné číslo načte p čísel, p ≥ 1, a určí maximální hodnotu, která se nachází mezi zadanými čísly.
+    a)	Použijte cyklus while
+    b)	Použijte cyklus for
+4) Sestavte algoritmus, který určí hodnotu a pořadí posledního sudého čísla, které se vyskytne v konečném počtu p čísel, p ≥ 1, postupně ukládaných do jednoduché proměnné číslo. Výsledek standardním
+způsobem vypíše. Pokud se mezi načtenými čísly žádné sudé číslo nevyskytne, podá o tom informaci.
+    a)	Použijte cyklus while
+    b)	Použijte cyklus for
+5) Sestavte algoritmus, který určí maximální hodnotu z konečného počtu p čísel, p ≥ 1, postupně ukládaných do jednoduché proměnné číslo, ale jen z těch čísel, která jsou dělitelná pěti. Výsledek standardním způsobem
+vypíše. Pokud se mezi načtenými čísly žádné takové číslo nevyskytne, podá o tom informaci.
+    a)	Použijte cyklus while
+    b)	Použijte cyklus for
