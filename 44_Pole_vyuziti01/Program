@@ -1,0 +1,112 @@
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
+
+namespace _44_Pole_vyuziti01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {/* Využití while
+            Random random = new Random();
+            int count = 10;
+
+            // Inicializace proměnné pro uchování aktuálního minima
+            int minimum = int.MaxValue;
+
+            // Počítadlo pro sledování počtu vygenerovaných hodnot
+            int generatedCount = 0;
+
+            // Cyklus while pro generování a hledání minima
+            while (generatedCount < count)
+            {
+                // Generování náhodného čísla
+                int randomNumber = random.Next(1, 100); // Zde můžete upravit rozsah podle potřeby
+
+                // Výpis vygenerovaného čísla
+                Console.WriteLine($"Vygenerované číslo: {randomNumber}");
+
+                // Aktualizace minima, pokud je vygenerované číslo menší
+                if (randomNumber < minimum)
+                {
+                    minimum = randomNumber;
+                }
+
+                // Inkrementace počítadla
+                generatedCount++;
+            }
+
+            // Výpis nalezeného minima
+            Console.WriteLine($"Minimum z vygenerovaných hodnot je: {minimum}");*/
+
+            /* Využití For 
+            Random random = new Random();
+            int count = 10;
+
+            // Inicializace proměnné pro uchování aktuálního minima
+            int minimum = int.MaxValue;
+
+            // Cyklus for pro generování a hledání minima
+            for (int i = 0; i < count; i++)
+            {
+                // Generování náhodného čísla
+                int randomNumber = random.Next(1, 100); // Zde můžete upravit rozsah podle potřeby
+
+                // Výpis vygenerovaného čísla
+                Console.WriteLine($"Vygenerované číslo: {randomNumber}");
+
+                // Aktualizace minima, pokud je vygenerované číslo menší
+                if (randomNumber < minimum)
+                {
+                    minimum = randomNumber;
+                }
+            }
+
+            // Výpis nalezeného minima
+            Console.WriteLine($"Minimum z vygenerovaných hodnot je: {minimum}");*/
+
+            /* Využití For cyklu a pole */
+
+            Random random = new Random();
+            int count = 10;
+
+            // Inicializace pole pro ukládání hodnot
+            int[] numbers = new int[count];
+
+            // Cyklus for pro generování a ukládání hodnot do pole
+
+            for (int i = 0; i < count; i++)
+            {
+                int randomNumber = random.Next(0,5);
+                    // Ukládání hodnoty do pole
+                numbers[i] = randomNumber;
+
+                Console.Write("| "+randomNumber+" ");
+            }
+
+            int minimum = numbers[0];
+            int pozice = 0;
+            for (int i = 1; i < count; i++)
+            {
+                if (numbers[i] < minimum)
+                { 
+                    minimum = numbers[i];
+                pozice = i;
+                }
+
+            }
+
+            Console.WriteLine($"\n" +
+                $"" +
+                $"Minimum z vygenerovaných hodnot je: {minimum}");
+
+            for (int i = 0; i < count; i++)
+            {
+                if (numbers[i] == minimum)
+                {
+                    Console.WriteLine($"Minimum se nachází na pozicí: {i}");
+                }
+            }
+
+        }
+    }
+}
