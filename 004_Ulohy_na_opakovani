@@ -1,0 +1,8 @@
+Programování - 1.A(S2) – úlohy na procvičení 14.12.2023
+Pokud není řešeno jinak, platí: Generujte pole o velikosti 20 hodnot v intervalu <-10; 10>
+1.	Sestavme a naprogramujte algoritmus, který určí součet sudých členů posloupnosti (a1, a2, … , an). Pokud se v posloupnosti sudý člen nevyskytuje, podá o tom informaci.
+2.	Sestavme algoritmus a naprogramujte, který určí součet členů posloupnosti (a1, a2, …, an), jejichž index je sudý. Předpokládejme, že posloupnost má alespoň dva členy, tj. n ≥ 2.
+3.	Sestavme algoritmus a naprogramujte, který určí součin členů posloupnosti (a1, a2, … , an), jejichž index je dělitelný pěti. Předpokládejme, že posloupnost má alespoň pět členů, tj. n ≥ 5.
+4.	Sestavte algoritmus a naprogramujte, který určí, zda je v posloupnosti (a1, a2, … , an), n = 100, více členů kladných nebo záporných. Výsledek standardním způsobem vypíše.
+5.	Sestavte algoritmus a naprogramujte, který v posloupnosti (a1, a2, …, an), n = 60, určí aritmetický průměr z členů dělitelných 7. Výsledek standardním způsobem vypíše. Pokud se v posloupnosti člen dělitelný 7 nevyskytuje, vypíše text "Nenalezeno.".
+6.	Sestavte algoritmus a naprogramujte, který sečte každý pátý člen posloupnosti (a1, a2, … , an), n = 150, členem a1 počínaje. Výsledek standardním způsobem vypíše.
