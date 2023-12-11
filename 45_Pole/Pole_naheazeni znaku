@@ -1,0 +1,67 @@
+namespace _45_Pole
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Vytvoření pole o velikosti 10
+            int[] pole = new int[10];
+
+            // Náhodně generujeme hodnoty v intervalu <-10, 10> a vkládáme do pole
+            Random random = new Random();
+            for (int i = 0; i < pole.Length; i++)
+            {
+                pole[i] = random.Next(-10, 11);
+            }
+
+            // Výpis původního pole
+            Console.WriteLine("Původní pole:");
+            for (int i = 0; i < pole.Length; i++)
+            {
+                Console.Write($" {pole[i]} |");
+            }
+            Console.WriteLine();
+
+            // Aktualizace pole podle podmínky <-2, 2>
+            for (int i = 0; i < pole.Length; i++)
+            {
+                if (pole[i] < -2 || pole[i] > 2)
+                {
+                    pole[i] = int.MinValue; // Použijeme hodnotu int.MinValue pro označení prázdného prvku
+                }
+            }
+
+            // Výpis aktualizovaného pole
+          
+       Console.WriteLine("Aktualizované pole s hodnotami v intervalu <-2, 2>:");
+            for (int i = 0; i < pole.Length; i++)
+                {
+                if (pole[i] == int.MinValue)
+                {
+                    Console.Write(" --  |"); // Mezera místo prázdné hodnoty
+                }
+                else
+                {
+                    Console.Write($" {pole[i]} |");
+                }
+            }
+            Console.WriteLine();
+
+            /* možnost využít foreach
+             foreach (var prvek in pole)
+        {
+            if (prvek == int.MinValue)
+            {
+                Console.Write("  "); // Mezera místo prázdné hodnoty
+            }
+            else
+            {
+                Console.Write($"{prvek} ");
+            }
+        }
+        Console.WriteLine();
+            */
+        }
+    }
+    
+}
