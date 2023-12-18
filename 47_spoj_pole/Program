@@ -1,0 +1,35 @@
+namespace _47_spoj_pole
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Inicializace polí A a B
+            int[] A = { 0, 0, 0, 0 };
+            int[] B = { 1, 1, 1 };
+
+            // Určení délky výsledného pole
+            int length = Math.Max(A.Length, B.Length) * 2;
+
+            // Inicializace výsledného pole C
+            int[] C = new int[length];
+
+            // Naplnění pole C prvky z polí A a B
+            for (int i = 0, j = 0; i < length; i += 2, j++)
+            {
+                C[i] = (j < A.Length) ? A[j] : -1;
+                C[i + 1] = (j < B.Length) ? B[j] : -1;
+            }
+
+            // Výpis výsledného pole C
+            Console.WriteLine("Výsledné pole C:");
+            foreach (int value in C)
+            {
+                Console.Write(value + " ");
+            }
+
+            Console.ReadLine(); // Zabránění automatickému zavření konzole
+        }
+    }
+    
+}
