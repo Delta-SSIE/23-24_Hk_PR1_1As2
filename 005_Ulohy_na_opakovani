@@ -1,0 +1,11 @@
+Vytvořte pole o velikosti 20 prvků. Pole naplňte vygenerovanými hodnotami v intervalu <-10;10>. Nad polem realizujte následující funkce:
+a)	Vygenerované pole vypište
+b)	V poli nalezněte maximální hodnotu a tu vypište
+c)	Nalezněte a vypište všechny pozice, kde se nachází maximální hodnota
+d)	Vypište první a poslední pozici, kde se nachází maximální hodnota
+e)	V poli nalezněte minimální hodnotu a vypište ji
+f)	Zaměňte všechny výskyty maximální hodnoty za minimální
+g)	Vytvořte dvě nová pole A[ ], B[ ], kde v poli A[ ] budou pouze kladné hodnoty z původního pole a v poli B[ ] budou pouze záporné hodnoty z původního pole. (Hodnotu 0 berte jako kladnou)
+h)	Vytvořte pole C[ ], které bude obsahovat nejprve prvky pole A [ ] a pak prvky z pole B [ ].
+i)	Vytvořte pole D[ ], které bude obsahovat A [1], B[1], A [2], B[2]… A [n], B[m].
+j)	Vytvořte pole E[ ], které bude obsahova obdsahovat pouze hodnoty pole D[ ] >5. 
