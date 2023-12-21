@@ -1,0 +1,80 @@
+namespace ConsoleApp3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] pole = new int[10];
+            int pocetnul = 0;
+
+            // Náhodná generace hodnot v intervalu <-10, 10> a jejich vložení do pole
+            Random random = new Random();
+            for (int i = 0; i < pole.Length; i++)
+            {
+                pole[i] = random.Next(0, 6);
+            }
+
+            foreach (var item in pole)
+                Console.Write(item + "|");
+
+            foreach (var item in pole)
+            {
+                if (item == 0)
+                    pocetnul++;
+
+            }
+
+            int[] novePole = new int[pole.Length];
+            int index = 0;
+
+            foreach (int hodnota in pole)
+            {
+                if (hodnota != 0)
+                {
+                    novePole[index] = hodnota;
+                    index++;
+                }
+            }
+
+            // Zkrácení pole na skutečnou délku obsahu
+            Array.Resize(ref novePole, index);
+
+            Console.WriteLine();
+            foreach (var item in novePole)
+                Console.Write(item + "|");
+            Console.WriteLine("\nDélka zkráceného pole je:" + novePole.Length);
+
+            /*
+            int[] pole2 = new int[pole.Length - pocetnul];
+            int j = 0;
+            for (int i = 0; i < pole.Length; i++)
+            {
+                if (pole[i] != 0)
+                {
+                    pole2[j] = pole[i];
+                    j++;
+                }
+            }
+            Console.WriteLine();
+            foreach (var item in pole2)
+                Console.Write(item + "|");
+            Console.WriteLine("\nDélka zkráceného pole je:" + pole2.Length);*/
+            /*
+            int[] pole3 = pole.Where(hodnota => hodnota != 0).ToArray();
+            Console.WriteLine();
+            foreach (var item in pole3)
+                Console.Write(item + "|");
+
+            Console.WriteLine("\nDélka zkráceného pole je:" + pole3.Length);*/
+            /*
+            V kódu je použita metoda Where z LINQ. Zde je vysvětlení:
+            pole - je původní pole, ze kterého chceme odstranit nuly.
+            Where - je metoda LINQ, která filtruje prvky podle zadané podmínky.
+            hodnota => hodnota != 0 - je lambda výraz, což je krátký způsob zápisu anonymní funkce. Tato lambda funkce vrací true pro prvky, které nejsou rovny nule, a tedy ponechává pouze prvky různé od nuly.
+            ToArray() - převede výsledek z LINQ dotazu zpět na pole.
+            Celkově řečeno, LINQ Where provádí filtrace prvků v poli podle zadané podmínky, kterou specifikujeme pomocí lambda výrazu. 
+            To umožňuje jednoduchý a čitelný zápis filtru bez nutnosti ručního procházení pole a kopírování prvků do nového pole.
+             */
+        }
+    }
+}
