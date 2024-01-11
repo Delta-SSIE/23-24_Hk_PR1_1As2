@@ -15,6 +15,16 @@ namespace _49_2D_pole_napln_a_vypis
                     pole2d[r, s] = int.Parse( Console.ReadLine());
                 }
             }
+/* Načitám pro sloupocích
+for (int s = 0; s < pole2d.GetLength(1); s++)
+            {
+                for (int r = 0; r < pole2d.GetLength(0); r++)
+                {
+                    Console.WriteLine("Zadej prvek v " + (r + 1) + ". radku a " + (s + 1) + ". sloupci");
+                    pole2d[r, s] = int.Parse(Console.ReadLine());
+                }
+            }
+*/
             Console.WriteLine("Matice o rozměrech [" + pole2d.GetLength(0) + "," + pole2d.GetLength(1) + "] má tyto hodnoty:");
 
             for (int r = 0; r < pole2d.GetLength(0); r++)
