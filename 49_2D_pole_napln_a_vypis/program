@@ -1,0 +1,31 @@
+namespace _49_2D_pole_napln_a_vypis
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int[,] pole2d = new int[2, 4]; // pocet radku, pocet sloupců
+
+            for (int r = 0; r < pole2d.GetLength(0); r++) // GetLength(0) k získání délky prvního rozměru
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++) // GetLength(1) k získání délky druhého rozměru.
+                {
+                    pole2d[r, s] = random.Next(1, 10);
+                }
+            }
+            Console.WriteLine("Matice o rozměrech [" + pole2d.GetLength(0) + "," + pole2d.GetLength(1) + "] má tyto hodnoty:");
+
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    Console.Write(pole2d[r,s]+ " ");
+                }
+                Console.ReadKey();                
+                Console.WriteLine();
+            }
+            
+        }
+    }
+}
