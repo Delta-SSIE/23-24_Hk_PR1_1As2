@@ -1,0 +1,98 @@
+namespace _51_2D_hlavni_diagonala
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            int[,] pole2d = new int[4, 4];
+
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    pole2d[r, s] = random.Next(1, 10);
+                }
+            }
+
+            Console.WriteLine("Matice o rozměrech [" + pole2d.GetLength(0) + "," + pole2d.GetLength(1) + "] má tyto hodnoty:");
+
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    Console.Write(pole2d[r, s] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("Prvky na hlavni diagonale: ");
+
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    if (r == s)
+                    {
+                        Console.Write(pole2d[r, s] + " | ");
+                    }
+                }
+            }
+            Console.WriteLine();
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    if (r == s)
+                    {
+                        pole2d[r, s] = 0;
+                    }
+                }
+            }
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < pole2d.GetLength(1); s++)
+                {
+                    Console.Write(pole2d[r, s] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            /* Zjednidušené řešené
+            for (int i = 0; i < pole2d.GetLength(0); i++)
+            {
+                Console.Write(pole2d[i, i] + " | ");
+            }
+            */
+
+            Console.WriteLine("Prvky pod hlavni diagonale: ");
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = 0; s < r; s++) // podmíka s<=r vypíše prvky na a pod hlavní diagonálou
+                {
+                    Console.Write(pole2d[r, s] + " | ");
+                }
+            }
+
+            Console.WriteLine("\nPrvky nad hlavni diagonalou: ");
+            for (int r = 0; r < pole2d.GetLength(0)-1; r++)
+            {
+                for (int s = r+1; s < pole2d.GetLength(1); s++)
+                {
+                    Console.Write(pole2d[r, s] + " | ");
+                }
+            }
+
+            Console.WriteLine("\nPrvky nad hlavni diagonalou a na ni: ");
+            for (int r = 0; r < pole2d.GetLength(0); r++)
+            {
+                for (int s = r; s < pole2d.GetLength(1); s++)
+                {
+                    Console.Write(pole2d[r, s] + " | ");
+                }
+            }
+
+        }
+
+
+    }
+}
