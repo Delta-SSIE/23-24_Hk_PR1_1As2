@@ -1,0 +1,42 @@
+using System.Security.Cryptography.X509Certificates;
+
+namespace _52_Metody
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Pozdrav();
+
+            string jmeno = Nacti("jmeno");
+            string prace = Nacti("povolani");
+            string rok_narozeni = Nacti("rok narozeni");
+            int vek =DateTime.Now.Year - Prevod_Str_Int(rok_narozeni);
+            Predstav_se(jmeno, prace, vek);
+        }
+
+        static void Pozdrav()
+        {
+            Console.WriteLine("Pozdrav mé první metody");
+        }
+
+        static void Predstav_se(string jmeno2, string prace2, int vek)
+        {
+            Console.WriteLine("Naprogarmoval mě: "+jmeno2);
+            Console.WriteLine("Jeho zaměstání je: " + prace2);
+            Console.WriteLine("Je mi: " + vek);
+        }
+
+        static string Nacti(string co_chci)
+        {
+            Console.WriteLine("Zadej sve "+co_chci);
+            return Console.ReadLine();
+        }
+
+        static int Prevod_Str_Int(string data)
+        {
+            return Convert.ToInt32(data);
+        }
+
+    }
+}
