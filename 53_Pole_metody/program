@@ -17,8 +17,8 @@ namespace _53_Pole_metody
             Vypis("Minimum se v poli nachází:", pocetmin);
             Vypis("Maximum v poli má hodnotu: ", max);
             Vypis("Maximum se v poli nachází:", pocetmax);
-            VypisPozice(array, min);
-            VypisPozice(array, max);
+            VypisPozice(array, min, "min");
+            VypisPozice(array, max, "max");
         }
 
         static void NaplPole(int[] array)
@@ -76,7 +76,7 @@ namespace _53_Pole_metody
             Console.WriteLine("\n" + text + a);
         }
 
-        static void VypisPozice(int[]array, int hodnota)
+        static void VypisPozice(int[]array, int hodnota, string co)
         {
             int pocet = 0;
             for (int i = 0; i < array.Length; i++)
@@ -84,7 +84,7 @@ namespace _53_Pole_metody
                 if (array[i] == hodnota)
                 {
                     pocet++;
-                    Vypis(pocet + ". pozice hodnoty " + hodnota + " je: ", i);
+                    Vypis(pocet + ". pozice výskytu hodnoty " + co +" je: ", i);
                 }
             }
         }
