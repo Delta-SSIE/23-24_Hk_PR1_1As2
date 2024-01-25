@@ -1,0 +1,75 @@
+namespace _53_Pole_metody
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = new int[20];
+            NaplPole(array);
+            VypisPole(array);
+            int max = NajdiMax(array);
+            int min = NajdiMin(array);
+            int pocetmin = Pocet(array, min);
+            int pocetmax = Pocet(array, max);
+            Vypis("Minimum v poli má hodnotu: ", min);
+            Vypis("Minimum se v poli nachází:", pocetmin);
+            Vypis("Maximum v poli má hodnotu: ", max);
+            Vypis("Maximum se v poli nachází:", pocetmax);
+        }
+
+        static void NaplPole(int[] array)
+        {
+            Random random = new Random();
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(1, 10);
+            }
+        }
+
+        static void VypisPole(int[] array)
+        {
+            Console.WriteLine("Jendorozmerne pole:");
+            foreach (var item in array)
+            {
+                Console.Write(item + "|");
+            }
+        }
+
+        static int NajdiMin(int[] array)
+        {
+            int min = array[0];
+            foreach (var item in array)
+            {
+                if (item < min)
+                    min = item;
+            }
+            return min;
+        }
+
+        static int NajdiMax(int[] array)
+        {
+            int max = array[0];
+            foreach (var item in array)
+            {
+                if (item > max)
+                    max = item;
+            }
+            return max;
+        }
+
+        static int Pocet(int[] array, int hodnota)
+        {
+            int pocet = 0;
+            foreach (var item in array)
+            {
+                if (item == hodnota)
+                    pocet++;
+            }
+            return pocet;
+        }
+        static void Vypis(string text, int a)
+        {
+            Console.WriteLine("\n"+text + a);
+        }
+    }
+}
