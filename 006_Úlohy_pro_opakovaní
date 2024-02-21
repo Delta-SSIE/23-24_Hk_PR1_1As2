@@ -1,0 +1,24 @@
+1) Vytvořte program, který si nechá na vstupu zadat několik čísel (jejich počet si zvolí uživatel) a z těchto čísel následně vypočítá medián. 
+Pro každé zadané číslo vypíše jeho odchylku od tohoto mediánu. U mediánu zanedbejte fakt, že se při sudém počtu prvků průměruje z prostředních dvou, 
+k jeho určení tedy pouze sáhněte na prostřední index, získaný jako délka / 2;
+
+2) Naprogramujte aplikaci, které zadáte na vstupu textový řetězec a ona zjistí, zda je to palindrom. Palindrom je slovo, které se čte stejně zleva i zprava. 
+Jsou to tedy např. slova: oko, anna, level, radar. Slovo o délce 1 znak lze rovněž vyhodnocovat jako palindrom.
+
+3) Naprogramujte šifraci textu pomocí Vigenerovy šifry. Program si na vstupu vyžádá šifrované slovo a heslo. Předpokládejme zadání slova "moribundus" a hesla "ahoj". 
+Program posune jednotlivá písmena v šifrovaném slovu o určitý počet znaků v abecedě dopředu. Tento počet závisí na písmenech v heslu. 
+V našem případě program posune první znak ve slovu o 1 ('a'), druhý o 8('h'), třetí o 15('o'), čtvrtý o 10 ('j'), pátý zas o 1 ('a') a tak dále. 
+Ve zjednodušené verzi nemusíte řešit, že heslo může být kratší než šifrované slovo a zadat ho jako "ahojahojah". Nezapomeňte, že pokud je v heslu 
+např. písmeno S a posun je 8, výsledný znak je opět A. Toto přetečení abecedy musíte ošetřit, jinak získáte výsledek podobný tomuto: "nw?sc}}nv}", ale i ten značí, že 
+jste na správné cestě. Detail algoritmu: https://www.itnetwork.cz/algoritmy/kryptografie/algoritmus-ukazka-sifrace-textu-pomoci-vigenerovi-sifry
+
+4) Naprogramujte převaděč zadaného textu do morzeovy abecedy, tedy opačný příklad k tomu, který byl v článku. 
+Speciální znaky a diakritiku zanedbejte (vynechte je - ve výpisu se nezobrazí místo nich nic).
+
+5) Naprogramujte rozveselovač textu. Aplikace funguje tak, že ji zadáte několik vět v jednom řetězci a ona za každou větu přidá smajlík. 
+Věta může končit buď tečkou, otazníkem nebo vykřičníkem. Pokud končí tečkou, bude smajlík umístěn místo ní. Pokud ! nebo ?, bude umístěn za toto znaménko. 
+Smajlíci jsou postupně dosazovány v tomto pořadí: :) :D :P
+
+6) Vytvořte program, který do konzole vykreslí šachovnici. Pro tmavá pole využijte plný obdélník "█" (napíšete jej jako Alt + 219 nebo si jej zkopírujte z textu do vašeho kódu). 
+Pro světlá pole využijte mezeru. Jelikož znaky v konzoli jsou mnohem vyšší než širší, vypište vždy 2 znaky vedle sebe, aby vypadaly dohromady jako čtverec. 
+Následně zvolte pozici šachové figurky „kůň, pěšák a střelec - vybere si uživastel“ a vypište všechny relevantní pozice, kam lze s figurkou posunout.
