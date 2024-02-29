@@ -1,0 +1,31 @@
+Zadání: Program pro správu stavů automobilu
+
+Vaším úkolem je vytvořit program pro správu stavů automobilu. Program by měl umožňovat simulovat různé operace s automobilem, jako je startování, zastavení a parkování, a zobrazovat aktuální stav.
+
+Požadavky:
+
+Vytvořte enumeraci CarState, která bude obsahovat tři stavy automobilu: Parked (zaparkovaný), Driving (v pohybu) a Stopped (zastavený).
+
+Implementujte metody pro startování, zastavení a parkování automobilu. Tyto metody by měly měnit stav automobilu v souladu s prováděnými operacemi.
+
+Vytvořte metodu pro zobrazení aktuálního stavu automobilu.
+
+V hlavní metodě programu vytvořte instanci automobilu, provedete s ním několik operací (např. start, zastavení, parkování) a zobrazíte aktuální stav po každé operaci.
+
+Poznámky:
+
+Při startování automobilu z parkovaného stavu by měl program vypsat zprávu "Car started. Now driving."
+Pokud je automobil již v pohybu a pokusíte se ho znovu spustit, program by měl vypsat zprávu "Car is already in motion."
+Při zastavení automobilu by program měl vypsat zprávu "Car stopped."
+Pokud se pokusíte zastavit automobil, který je již zastavený nebo zaparkovaný, program by měl vypsat zprávu "Car is already stopped or parked."
+Při parkování automobilu by program měl vypsat zprávu "Car parked."
+Pokud se pokusíte zaparkovat automobil, který je již zaparkovaný, program by měl vypsat zprávu "Car is already parked."
+Příklad výstupu programu:
+
+Car is currently parked.
+Car started. Now driving.
+Car is currently driving.
+Car stopped.
+Car is currently stopped.
+Car parked.
+Car is currently parked.
