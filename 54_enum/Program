@@ -1,0 +1,19 @@
+namespace _54_enumerace_principles
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ShapeType selectedShape = ShapeType.Circle;
+            Console.WriteLine("Selected shape is: " + selectedShape);
+            selectedShape = ShapeType.Triagle;
+            Console.WriteLine("New selected shape is: " + selectedShape);
+        }
+        enum ShapeType
+        {
+            Circle,
+            Square,
+            Triagle
+        }
+    }
+}
