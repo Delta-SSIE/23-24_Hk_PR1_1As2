@@ -1,0 +1,81 @@
+namespace _55_enum_car_state
+{
+    internal class Program
+    {
+        enum CarState
+        {
+            Parked, // Automobil je zaparkovaný
+            Driving, // Automobil je v pohybu
+            Stopped // Automobil je zastaveny
+        }
+
+        static CarState currentState = CarState.Parked; //Aktuální stav automobilu
+
+        // Metoda pro startování automobilu
+        static void StartCar()
+        {
+            // Pokud je automobil zaparkovaný, můžeme ho spustit
+            if (currentState == CarState.Parked)
+            {
+                currentState = CarState.Driving;
+                Console.WriteLine("Car started. Now driving");
+            }
+            else
+            {
+                Console.WriteLine("Cas is already in motion.");
+            }
+        }
+
+        // Metoda pro zastavení automobilu
+        static void StopCar()
+        {
+            // Pokud je automobil v pohybu, můžeme ho zastavit
+            if (currentState == CarState.Driving)
+            {
+                currentState = CarState.Stopped;
+                Console.WriteLine("Car stopped.");
+            }
+            else
+            {
+                Console.WriteLine("Car is already stopped or parked");
+            }
+        }
+
+        // Metoda pro zaparkování automobilu
+        static void Parkcar()
+        {
+            // Pokud není automobil zaparkovaný, můžeme ho zaparkovat
+            if (currentState != CarState.Parked)
+            {
+                currentState = CarState.Parked;
+                Console.WriteLine("Car parked.");
+            }
+            else
+            {
+                Console.WriteLine("Car is already parked.");
+            }
+        }
+
+        static void DisplayState()
+        {
+            Console.WriteLine($"Car is currenytly {currentState.ToString().ToLower()}");
+        }
+            static void Main(string[] args)
+            {
+                // Zobrazení počátečního stavu automobilu
+                DisplayState(); 
+            Console.ReadKey();
+            // Spuštění automobi
+                StartCar();
+                DisplayState();
+                Console.ReadKey();
+                // Zastavení automobilu
+                StopCar();
+                DisplayState();
+                Console.ReadKey();
+                // Zaparkování automobilu
+                Parkcar();
+                DisplayState();
+            }
+        
+    }
