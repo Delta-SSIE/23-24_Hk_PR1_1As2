@@ -1,0 +1,104 @@
+namespace _56_enum_knihovna
+{
+    internal class Program
+    {
+        // Definice enumerace pro stavy knihy
+        enum BookStatus
+        {
+            Available,      // Kniha je k dispozici v knihovně
+            Borrowed,       // Kniha byla vypůjčena
+            Reserved        // Kniha je rezervovaná
+        }
+
+            static void Main(string[] args)
+        {
+            // Vytvoření pole knih a pole stavů knih
+            string[] books = { "Harry Potter", "Lord of the Rings", "Game of Thrones" };
+            BookStatus[] bookStatuses = { BookStatus.Available, BookStatus.Borrowed, BookStatus.Reserved };
+
+            bool endProgram = false;
+
+            while (!endProgram)
+            {
+                // Hledání knihy v knihovně
+                
+                Console.WriteLine("Which book do you want: Harry Potter, Lord of the Rings or Game of Trones or (type 'end' to exit): ");
+                string bookToFind = Console.ReadLine();
+
+                if (bookToFind.ToLower() == "end")
+                {
+                    endProgram = true;
+                    continue;
+                }
+
+                bool found = false;
+                int foundIndex = -1; // Index nalezené knihy
+                for (int i = 0; i < books.Length; i++)
+                {
+                    if (books[i] == bookToFind)
+                    {
+                        found = true;
+                        foundIndex = i;
+                        Console.WriteLine($"Book '{bookToFind}' is available in the library.");
+                        Console.WriteLine($"Status: {bookStatuses[i]}");
+
+                        // Pokud je kniha k dispozici, nabídni možnost vypůjčení nebo rezervace
+                        if (bookStatuses[i] == BookStatus.Available)
+                        {
+                            Console.WriteLine("Do you want to borrow (b) this book or reserve (r) it? (b/r)");
+                            string response = Console.ReadLine();
+                            if (response.ToLower() == "b")
+                            {
+                                ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Borrowed);
+                                Console.WriteLine($"Book '{bookToFind}' status changed to: {bookStatuses[foundIndex]}");
+                            }
+                            else if (response.ToLower() == "r")
+                            {
+                                ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Reserved);
+                                Console.WriteLine($"Book '{bookToFind}' status changed to: {bookStatuses[foundIndex]}");
+                            }
+                        }
+                        else if (bookStatuses[i] == BookStatus.Borrowed || bookStatuses[i] == BookStatus.Reserved)
+                        {
+                            if (bookStatuses[i] == BookStatus.Reserved)
+                            {
+                                Console.WriteLine("Do you want to cancel the reservation? (y/n)");
+                                string response = Console.ReadLine();
+                                if (response.ToLower() == "y")
+                                {
+                                    ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
+                                    Console.WriteLine($"Reservation for '{bookToFind}' canceled.");
+                                }
+                            }
+                            else // bookStatuses[i] == BookStatus.Borrowed
+                            {
+                                Console.WriteLine("Do you want to return this book? (y/n)");
+                                string response = Console.ReadLine();
+                                if (response.ToLower() == "y")
+                                {
+                                    ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
+                                    Console.WriteLine($"Book '{bookToFind}' returned.");
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+
+
+                // Pokud kniha není nalezena
+                if (!found && !endProgram)
+                {
+                    Console.WriteLine($"Book '{bookToFind}' is not available in the library.");
+                }
+            }
+        }
+
+        // Metoda pro změnu stavu knihy
+        static void ChangeBookStatus(ref BookStatus bookStatus, BookStatus newStatus)
+        {
+            bookStatus = newStatus;
+        }
+    }
+}
+   
