@@ -1,0 +1,32 @@
+Příklady na procvičování enumerace:
+1) Vytvořte program: Úkoly na úklid
+  Enumerace TaskStatus bude mít následující stavy:
+     /*    enum TaskStatus
+    {
+        ToDo, //Úkol ještě nebyl dokončen
+        InProgress, // Úkol je v průběhu
+        Done //Úkol byl dokončen
+    }*/
+   Program bude obsahovat minimálně tyto metody:
+    DisplayTasks (string[] tasks, TaskStatus[] taskStatuses): Pro výpis všech úkolů a jejich stavů
+    StartTask(int index, TaskStatus[] statuses): Začít vykonávat úkol.
+    CompleteTask(int index, TaskStatus[] statuses): Dokončit úkol.
+
+  2) Vytvořte program: Úkol na nákup potravin
+    Enumerace TaskStatus bude mít stejné stavy jako v předchozím příkladu.
+    Metody pro tento úkol mohou zahrnovat:
+    DisplayShoppingList (string[] shoppinglist, TaskStatus[] taskStatuses): Pro výpis seznamu nákupu a jejich stavů
+    StartShopping(int index, TaskStatus[] statuses): Začít nakupovat.
+    FinishShopping(int index, TaskStatus[] statuses): Dokončit nakupování.
+3) Vytvořte program: Úkol na cvičení
+    Enumerace TaskStatus bude mít stejné stavy jako v předchozích příkladech.
+    Metody pro tento úkol mohou zahrnovat:
+    DisplayExercie: Vypis všech cvičení a jejich stavů
+    StartExercise: Začít cvičit.
+    FinishExercise: Dokončit cvičení.
+4) Vytvořet program: Úkol na údržbu zahrady
+    Enumerace TaskStatus bude mít stejné stavy jako v předchozích příkladech.
+    Metody pro tento úkol mohou zahrnovat:
+    DisplayGardening: Vypis všech úkolů peče o zahradu a jejich stavů
+    StartGardening(int index, TaskStatus[] statuses): Začít se starat o zahradu.
+    FinishGardening(int index, TaskStatus[] statuses): Dokončit údržbu zahrady.
