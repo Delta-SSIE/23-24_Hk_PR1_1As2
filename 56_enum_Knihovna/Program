@@ -22,7 +22,9 @@ namespace _56_enum_knihovna
             while (!endProgram)
             {
                 // Hledání knihy v knihovně
-                
+
+                DisplayBooks(books, bookStatuses);
+
                 Console.WriteLine("Which book do you want: Harry Potter, Lord of the Rings or Game of Trones or (type 'end' to exit): ");
                 string bookToFind = Console.ReadLine();
 
@@ -105,6 +107,14 @@ namespace _56_enum_knihovna
         static void ChangeBookStatus(ref BookStatus bookStatus, BookStatus newStatus)
         {
             bookStatus = newStatus;
+        }
+
+        static void DisplayBooks(string[] books, BookStatus[] bookStatuses)
+        {
+            for (int i = 0; i < books.Length; i++)
+            {
+                Console.WriteLine($"Book: {books[i]}, Status: {bookStatuses[i]}");
+            }
         }
     }
 }
