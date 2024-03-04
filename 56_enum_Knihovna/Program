@@ -17,6 +17,7 @@ namespace _56_enum_knihovna
             BookStatus[] bookStatuses = { BookStatus.Available, BookStatus.Borrowed, BookStatus.Reserved };
 
             bool endProgram = false;
+            string response;
 
             while (!endProgram)
             {
@@ -46,7 +47,7 @@ namespace _56_enum_knihovna
                         if (bookStatuses[i] == BookStatus.Available)
                         {
                             Console.WriteLine("Do you want to borrow (b) this book or reserve (r) it? (b/r)");
-                            string response = Console.ReadLine();
+                            response = Console.ReadLine();
                             if (response.ToLower() == "b")
                             {
                                 ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Borrowed);
@@ -58,27 +59,33 @@ namespace _56_enum_knihovna
                                 Console.WriteLine($"Book '{bookToFind}' status changed to: {bookStatuses[foundIndex]}");
                             }
                         }
-                        else if (bookStatuses[i] == BookStatus.Borrowed || bookStatuses[i] == BookStatus.Reserved)
+                        else if (bookStatuses[i] == BookStatus.Reserved)
                         {
-                            if (bookStatuses[i] == BookStatus.Reserved)
+                            Console.WriteLine("Do you want to cancel the reservation? (y/n)");
+                            response = Console.ReadLine();
+                            if (response.ToLower() == "y")
                             {
-                                Console.WriteLine("Do you want to cancel the reservation? (y/n)");
-                                string response = Console.ReadLine();
-                                if (response.ToLower() == "y")
-                                {
-                                    ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
-                                    Console.WriteLine($"Reservation for '{bookToFind}' canceled.");
-                                }
+                                ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
+                                Console.WriteLine($"Book '{bookToFind}' status changed to: {bookStatuses[foundIndex]}");
                             }
-                            else // bookStatuses[i] == BookStatus.Borrowed
+                            else 
                             {
-                                Console.WriteLine("Do you want to return this book? (y/n)");
-                                string response = Console.ReadLine();
+                                Console.WriteLine("Do you want to borrow (b) this book? (y/n)");
+                                response = Console.ReadLine();
                                 if (response.ToLower() == "y")
-                                {
-                                    ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
-                                    Console.WriteLine($"Book '{bookToFind}' returned.");
-                                }
+                                    ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Borrowed);
+                                Console.WriteLine($"Book '{bookToFind}' status changed to: {bookStatuses[foundIndex]}");
+                            }
+                        }
+
+                        else if (bookStatuses[i] == BookStatus.Borrowed)
+                        {
+                            Console.WriteLine("Do you want to return this book? (y/n)");
+                            response = Console.ReadLine();
+                            if (response.ToLower() == "y")
+                            {
+                                ChangeBookStatus(ref bookStatuses[foundIndex], BookStatus.Available);
+                                Console.WriteLine($"Book '{bookToFind}' returned.");
                             }
                         }
                         break;
