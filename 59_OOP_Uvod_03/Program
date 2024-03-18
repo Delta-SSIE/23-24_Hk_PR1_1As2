@@ -1,0 +1,69 @@
+namespace _59_OOP_03
+{
+    class Car   // začátek třídy Car
+    {
+        public string Brand;    // veřejná proměnná třídy Car - reprezentuje vlastnosti
+        public string Model;    // veřejná proměnná třídy Car
+        public int Year;        // veřejná proměnná třídy Car
+
+        public void InputInfo()
+        {
+            Console.WriteLine("Enter the brand of the car:");
+            Brand = Console.ReadLine();
+
+            Console.WriteLine("Enter the model of the car:");
+            Model = Console.ReadLine();
+
+            Console.WriteLine("Enter zhe year of the car:");
+            int.TryParse(Console.ReadLine(), out Year);
+        }
+
+        public void DisplayInfo()   // veřjná metoda pro výpis infmorací
+        {
+            Console.WriteLine($"Brand: {Brand}, Model: {Model}, Year: {Year}");
+        }
+    }
+        internal class Program
+    {
+        static void Main(string[] args)
+        {
+                Console.WriteLine("Enter the number of car:");
+                int numberOfCars;
+                int.TryParse(Console.ReadLine(), out numberOfCars);
+
+                Car[] cars = new Car[numberOfCars];
+
+                for (int i = 0; i < numberOfCars; i++)
+                {
+                    Console.WriteLine($"\nEnter information for car {i + 1}");
+                    cars[i] = new Car();
+                    cars[i].InputInfo();
+                }
+
+            // Výpis všech záznamů přes iteraci
+            Console.WriteLine("\nInformation for entered cars:");
+            foreach (Car car in cars) //Iterace přes pole cars s intací třídy Car
+            {
+                car.DisplayInfo();
+            }
+            // Výpis všech záznamů
+            for (int i = 0; i < numberOfCars; i++)
+            {
+                cars[i].DisplayInfo();
+            }
+
+                // Výpis konkrétního auta
+            Console.Write("\nEnter the index of the car you want to display: ");
+            int index;
+            while (!int.TryParse(Console.ReadLine(), out index) || index < 1 || index > numberOfCars)
+            {
+                Console.WriteLine($"Invalid index. Please enter a number between 1 and {numberOfCars}.");
+                Console.Write("Enter the index of the car you want to display: ");
+            }
+
+            Console.WriteLine("\nInformation for the entered car:");
+            cars[index - 1].DisplayInfo();
+
+        }
+    }
+}
