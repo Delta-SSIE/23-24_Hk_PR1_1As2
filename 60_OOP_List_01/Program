@@ -1,0 +1,51 @@
+namespace _60_OOP_List_01
+{
+    class Car   // začátek třídy Car
+    {
+        public string Brand;    // veřejná proměnná třídy Car - reprezentuje vlastnosti
+        public string Model;    // veřejná proměnná třídy Car
+        public int Year;        // veřejná proměnná třídy Car
+
+        public void InputInfo()
+        {
+            Console.WriteLine("Enter the brand of the car:");
+            Brand = Console.ReadLine();
+
+            Console.WriteLine("Enter the model of the car:");
+            Model = Console.ReadLine();
+
+            Console.WriteLine("Enter zhe year of the car:");
+            int.TryParse(Console.ReadLine(), out Year);
+        }
+
+        public void DisplayInfo()   // veřjná metoda pro výpis infmorací
+        {
+            Console.WriteLine($"Brand: {Brand}, Model: {Model}, Year: {Year}");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the number of cars:");
+            int numberOfCars;
+            int.TryParse(Console.ReadLine(), out numberOfCars);
+
+            List<Car> cars = new List<Car>();
+
+            for (int i = 0; i < numberOfCars; i++)
+            {
+                Console.WriteLine($"\nEnter information for car {i + 1}");
+                Car newCar = new Car();
+                newCar.InputInfo();
+                cars.Add(newCar); // Přidání položky do listu cars
+            }
+
+            Console.WriteLine("\nInformation for entered cars");
+            foreach (Car car in cars)
+            {
+                car.DisplayInfo();
+            }
+        }
+    }
+}
