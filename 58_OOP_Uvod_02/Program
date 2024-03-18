@@ -1,0 +1,36 @@
+namespace _58_OOP_Uvod_02
+{
+    class Car   // začátek třídy Car
+    {
+        public string Brand;    // veřejná proměnná třídy Car - reprezentuje vlastnosti
+        public string Model;    // veřejná proměnná třídy Car
+        public int Year;        // veřejná proměnná třídy Car
+
+        public void InputInfo()
+        {
+            Console.WriteLine("Enter the brand of the car:");
+            Brand = Console.ReadLine();
+
+            Console.WriteLine("Enter the model of the car:");
+            Model = Console.ReadLine();
+
+            Console.WriteLine("Enter zhe year of the car:");
+            int.TryParse(Console.ReadLine(), out Year);
+        }
+
+        public void DisplayInfo()   // veřjná metoda pro výpis infmorací
+        {
+            Console.WriteLine($"Brand: {Brand}, Model: {Model}, Year: {Year}");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Car myCar = new Car(); // Vytváříme nový objekt typu Car z názven myCar. Klíčové slovo new, které nám alokuje paměť pro nový objekt a volá kontruktor třídy Car.
+            myCar.InputInfo();
+            myCar.DisplayInfo();
+        }
+    }
+}
