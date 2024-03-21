@@ -1,0 +1,93 @@
+namespace _61_OOP_Auta
+{
+    class Car
+    {
+        public string Brand;
+        public string Model;
+        public int Year;
+
+        public void InputInfo()
+        {
+            Console.Write("Enter the brand of the car: ");
+            Brand = Console.ReadLine();
+
+            Console.Write("Enter the model of the car: ");
+            Model = Console.ReadLine();
+
+            Console.Write("Enter the year of the car: ");
+            int.TryParse(Console.ReadLine(), out Year);
+        }
+
+        public void DisplayInfo()
+        {
+            Console.WriteLine($"Brand: {Brand}, Model: {Model}, Year: {Year}");
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Car> cars = new List<Car>();
+
+            bool exit = false;
+            while (!exit)
+            {
+                Console.WriteLine("\nMenu:");
+                Console.WriteLine("1. Add a new car");
+                Console.WriteLine("2. Delete a car");
+                Console.WriteLine("3. Edit a car");
+                Console.WriteLine("4. Display all cars");
+                Console.WriteLine("5. Exit");
+                Console.Write("Select an option: ");
+                string option = Console.ReadLine();
+
+                switch (option)
+                {
+                    case "1":
+                        Car newCar = new Car();
+                        newCar.InputInfo();
+                        cars.Add(newCar);
+                        break;
+                    case "2":
+                        Console.Write("Enter the index of the car to delete: ");
+                        if (int.TryParse(Console.ReadLine(), out int index) && index >= 0 && index < cars.Count)
+                        {
+                            cars.RemoveAt(index);
+                            Console.WriteLine("Car deleted.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid index.");
+                        }
+                        break;
+                    case "3":
+                        Console.Write("Enter the index of the car to edit: ");
+                        if (int.TryParse(Console.ReadLine(), out int editIndex) && editIndex >= 0 && editIndex < cars.Count)
+                        {
+                            cars[editIndex].InputInfo();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid index.");
+                        }
+                        break;
+                    case "4":
+                        Console.WriteLine("\nInformation for entered cars:");
+                        foreach (Car car in cars)
+                        {
+                            car.DisplayInfo();
+                        }
+                        break;
+                    case "5":
+                        exit = true;
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please try again.");
+                        break;
+                }
+            }
+
+        }
+    }
+}
