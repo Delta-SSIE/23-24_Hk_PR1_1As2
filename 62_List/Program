@@ -1,0 +1,153 @@
+namespace _62_List
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Random rand = new Random();
+            List<int> numbers = GenerateRanndomNumbers(rand, 50);
+            Console.WriteLine("Seznam náhodých čísel:");
+            PrintNumbers(numbers);
+
+            Console.WriteLine("\nZadej hodnotu pro vyhledani");
+            int seraceNumber = Convert.ToInt32(Console.ReadLine());
+            bool found = SearcheNumber(numbers, seraceNumber);
+
+            if (found)
+            {
+                Console.WriteLine($"Číslo {seraceNumber} bylo nalezeno v seznamu");
+                RemoveAllOccurrences(numbers, seraceNumber);
+                Console.WriteLine($"Všechny výskyty čísla {seraceNumber} byly odebrány ze seznamu");
+                Console.WriteLine($"Seznam čísel po odebrání čísla {seraceNumber}:");
+                PrintNumbers(numbers);
+            }
+            else
+                Console.WriteLine($"Číslo {seraceNumber} NEBYLO nalezeno v seznamu");
+
+            List<int> negativNumber = GetNegativeNumbers(numbers);
+            Console.WriteLine("\nSeznam záporných čísel:");
+            PrintNumbers(negativNumber);
+
+            List<int> positiveNumber = GetPositiveNumbers(numbers);
+            Console.WriteLine("\nSeznam kladných čísel:");
+            PrintNumbers(positiveNumber);
+        }
+
+        static List<int> GenerateRanndomNumbers(Random rand, int count)
+        {
+            List<int> numbers = new List<int>();
+            for (int i = 0; i < count; i++)
+            {
+                int randomNumber = rand.Next(-10, 11);
+                numbers.Add(randomNumber);
+            }
+            return numbers;
+        }
+
+        static void PrintNumbers(List<int> numbers)
+        {
+            foreach (var item in numbers)
+            {
+                Console.Write(item + "; ");
+            }
+        }
+
+        static bool SearcheNumber(List<int> numbers, int searchNumer)
+        {
+            return numbers.Contains(searchNumer);
+        }
+
+        static void RemoveAllOccurrences(List<int> numbers, int searchNumber)
+        {
+            numbers.RemoveAll(x => x == searchNumber);
+        }
+
+        static List<int> GetNegativeNumbers(List<int> numbers)
+        {
+            List<int> negatinNumbers = new List<int>();
+
+            foreach (var item in numbers)
+            {
+                if (item < 0)
+                    negatinNumbers.Add(item);
+            }
+
+            return negatinNumbers;
+        }
+
+        static List<int> GetPositiveNumbers(List<int> numbers)
+        {
+            List<int> positivNumbers = new List<int>();
+
+            foreach (var item in numbers)
+            {
+                if (item > 0)
+                    positivNumbers.Add(item);
+            }
+
+            return positivNumbers;
+        }
+
+    }
+ 
+}
+/*
+ * List implementuje interface IList. Ten tvoří základ kolekce a obsahuje následující metody:
+
+
+	Add() - Přidá nový prvek do listu.
+
+	Clear() - Vymaže všechny prvky.
+
+	Contains() - Vrátí true, pokud list obsahuje daný prvek.
+
+	CopyTo() - Metodu již známe z pole, umožňuje zkopírovat prvky z listu do pole.
+
+	IndexOf() - Vrátí index prvního výskytu daného prvku v listu.
+
+	Insert() - Vloží na daný index nový prvek (a další prvky posune).
+
+	Remove() - Vymaže daný prvek. Tato funkce je velmi užitečná v případě, že máme v Listu instance nějaké
+	třídy (např. uživatele), nemusíme si držet jejich číselné indexy, jen zavoláme např. list.Remove(karel), kdy předáme konkrétní
+	instanci, která se má ze seznamu odebrat..
+
+	RemoveAt() - Vymaže prvek na daném 	indexu.
+
+
+Samotný List ještě dodává další metody, popišme si i ty:
+
+
+	AddRange() - Přidá do listu prvky z předaného pole. Podobně můžeme volat i metody InsertRange() a
+	RemoveRange(). Je dobrý nápad metodu využívat, jelikož nám ušetří cyklus. Jedinou záludností je, že umí přidávat pouze z pole. Za
+	chvíli si ukážeme co s tím.
+
+	AsReadOnly() - Vrátí instanci listu, ze které lze prvky pouze číst. Vhodné pro zapouzdření prvků kolekce.
+
+	Count - Vlastnost nesoucí počet prvků v listu. Všimněte si, že se vlastnost nejmenuje Length (jako u
+	pole), jelikož délka listu je o něco větší. Pravou délku listu získáme vlastností Capacity, i když nám tento údaj asi k ničemu
+	není.
+
+	Find() - Vyhledá daný prvek pomocí predikátu (který je, jak již víme, delegátem). Je to velmi jednoduché a
+	efektivní, jelikož můžeme použít zápis přes lambda funkce. Ukažme si, jak by se na Listu typu int vyhledalo číslo větší
+	než 25:
+List<int> list = new List<int>();
+list.Add(5);
+list.Add(10);
+list.Add(30);
+
+int cislo = list.Find(a => a > 25);
+Console.WriteLine(cislo);
+
+FindAll() - Podobně jako Find() můžeme používat metodu FindAll(), která najde všechny odpovídající prvky a vrátí nový List, který tyto nalezené
+	prvky obsahuje:
+List<int> list = new List<int>();
+list.Add(5);
+list.Add(10);
+list.Add(30);
+list.Add(35);
+
+List<int> cislaVetsiNez25 = list.FindAll(a => a > 25);
+foreach (int c in cislaVetsiNez25)
+    Console.WriteLine(c);
+
+ */
