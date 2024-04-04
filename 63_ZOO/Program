@@ -1,0 +1,39 @@
+
+namespace _62_ZOO
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ZOO zoo = new ZOO();
+            int volbaMenu = 0;
+            do
+            {
+                Console.WriteLine("HLAVNI MENU");
+                Console.WriteLine("\t1. Pridat zvire");
+                Console.WriteLine("\t2. Vypsat zvirata");
+                Console.WriteLine("\t3. Smaz zvire");
+                Console.WriteLine("\t4. Uprav zvire");
+                Console.WriteLine("\t5. Ukoncit program");
+                volbaMenu = Int32.Parse(Console.ReadLine());
+
+                switch (volbaMenu)
+                {
+                    case 1:
+                        zoo.PridatZvire();
+                        break;
+                    case 2:
+                        zoo.VypisZvirat();
+                        break;
+                    case 3:
+                        zoo.SmazatZvire();
+                        break;
+                    case 4:
+                        zoo.UpravitZvire();
+                        break;
+                }
+
+            } while (volbaMenu != 5);
+        }
+    }
+}
