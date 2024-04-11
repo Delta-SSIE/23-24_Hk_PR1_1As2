@@ -1,0 +1,171 @@
+namespace _66_Zoo_soubor
+{
+    public class ZOO
+    {
+        private List<Zvire> zvirata = new List<Zvire>();
+
+        public void PridatZvire()
+        {
+            Console.WriteLine("Zadejte druh zvířete:");
+            string druh = Console.ReadLine();
+
+            Console.WriteLine("Zadejte jméno zvířete:");
+            string jmeno = Console.ReadLine();
+
+            Zvire zvire = new Zvire(druh, jmeno);
+            zvirata.Add(zvire);
+
+            Console.WriteLine("Zvíře bylo přidáno do ZOO.");
+        }
+
+        public void VypisZvirat()
+        {
+            Console.WriteLine("Zvířata v ZOO:");
+            foreach (Zvire zvire in zvirata)
+            {
+                Console.WriteLine($"Druh: {zvire.Druh}, Jméno: {zvire.Jmeno}");
+            }
+        }
+
+        public void SmazatZvire()
+        {
+            Console.WriteLine("Zadejte jméno zvířete k smazání:");
+            string jmeno = Console.ReadLine();
+
+            Zvire zvire = zvirata.Find(z => z.Jmeno == jmeno);
+            if (zvire != null)
+            {
+                zvirata.Remove(zvire);
+                Console.WriteLine("Zvíře bylo smazáno.");
+            }
+            else
+            {
+                Console.WriteLine("Zvíře nebylo nalezeno.");
+            }
+        }
+
+        public void UpravitZvire()
+        {
+            Console.WriteLine("Zadejte jméno zvířete k úpravě:");
+            string jmeno = Console.ReadLine();
+
+            Zvire zvire = zvirata.Find(z => z.Jmeno == jmeno);
+            if (zvire != null)
+            {
+                Console.WriteLine("Zadejte nový druh zvířete:");
+                zvire.Druh = Console.ReadLine();
+
+                Console.WriteLine("Zadejte nové jméno zvířete:");
+                zvire.Jmeno = Console.ReadLine();
+
+                Console.WriteLine("Zvíře bylo úspěšně upraveno.");
+            }
+            else
+            {
+                Console.WriteLine("Zvíře nebylo nalezeno.");
+            }
+        }
+
+        public void UlozitDoSouboru(string filePath)
+        {
+            using (StreamWriter writer = new StreamWriter(filePath))
+            {
+                foreach (Zvire zvire in zvirata)
+                {
+                    writer.WriteLine($"{zvire.Druh},{zvire.Jmeno}");
+                }
+            }
+            Console.WriteLine("Data byla úspěšně uložena do souboru.");
+        }
+
+        public void NacistZeSouboru(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                zvirata.Clear();
+                using (StreamReader reader = new StreamReader(filePath))
+                {
+                    string line;
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        string[] parts = line.Split(',');
+                        if (parts.Length == 2)
+                        {
+                            string druh = parts[0];
+                            string jmeno = parts[1];
+                            Zvire zvire = new Zvire(druh, jmeno);
+                            zvirata.Add(zvire);
+                        }
+                    }
+                }
+                Console.WriteLine("Data byla úspěšně načtena ze souboru.");
+            }
+            else
+            {
+                Console.WriteLine("Soubor neexistuje.");
+            }
+        }
+    }
+
+    public class Zvire
+    {
+        public string Druh { get; set; }
+        public string Jmeno { get; set; }
+
+        public Zvire(string druh, string jmeno)
+        {
+            Druh = druh;
+            Jmeno = jmeno;
+        }
+    }
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            ZOO zoo = new ZOO();
+            int volbaMenu = 0;
+            string filePath;
+            do
+            {
+                Console.WriteLine("HLAVNI MENU");
+                Console.WriteLine("\t1. Pridat zvire");
+                Console.WriteLine("\t2. Vypsat zvirata");
+                Console.WriteLine("\t3. Smaz zvire");
+                Console.WriteLine("\t4. Uprav zvire");
+                Console.WriteLine("\t5. Uložit do souboru");
+                Console.WriteLine("\t6. Načíst ze souboru");
+                Console.WriteLine("\t7. Ukoncit program");
+
+                volbaMenu = Int32.Parse(Console.ReadLine());
+
+                switch (volbaMenu)
+                {
+                    case 1:
+                        zoo.PridatZvire();
+                        break;
+                    case 2:
+                        zoo.VypisZvirat();
+                        break;
+                    case 3:
+                        zoo.SmazatZvire();
+                        break;
+                    case 4:
+                        zoo.UpravitZvire();
+                        break;
+                    case 5:
+                        Console.WriteLine("Zadejte cestu k souboru pro uložení:");
+                        filePath = Console.ReadLine();
+                        zoo.UlozitDoSouboru(filePath);
+                        break;
+                    case 6:
+                        Console.WriteLine("Zadejte cestu k souboru pro načtení:");
+                        filePath = Console.ReadLine();
+                        zoo.NacistZeSouboru(filePath);
+                        break;
+                }
+
+            } while (volbaMenu != 7);
+        }
+    }
+}
